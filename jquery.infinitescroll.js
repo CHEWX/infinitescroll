@@ -48,8 +48,8 @@
                 }
             );
         },
-        callback: function() {
-            return this.settings.callback();
+        callback: function( $items ) {
+            return this.settings.callback( $items );
         },
         fetch_items: function (href) {
             var infinite_box = this;
@@ -63,7 +63,7 @@
                     $items.hide();
                     $next_button.remove();
                     infinite_box.$container.append($items);
-                    infinite_box.callback();
+                    infinite_box.callback( $items );
                     $items.fadeIn();
                 },
                 dataType: 'html',
