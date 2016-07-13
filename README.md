@@ -14,6 +14,9 @@ A demo page is currently [here](http://infinitescroll.zedler.it/demo/page1.html)
         itemSelector: '.col',
         nextSelector: '.next-page',
         bufferPx: 40,
+        callback: function() {
+            console.log('Page Loaded');
+        },
     });
 </script>
 ```
@@ -27,6 +30,9 @@ first link matching `nextSelector`.
 
 The elements of the fetched page matching `itemSelector` are appended
 to the jQuery collection.
+
+Add anonymous function to the callback option which is called after the
+items are added to the DOM.
 
 If the next page has an element matching `nextSelector` as well,
 the whole procedure repeats.

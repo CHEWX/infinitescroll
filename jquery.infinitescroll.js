@@ -1,6 +1,6 @@
 /** Copyright Philipp Zedler. MIT License **/
 (function ($) {
-    
+
     var InfiniteBox = function ($element, options) {
             this.$container = $element;
             this.settings = $.extend(
@@ -10,20 +10,21 @@
             );
             this.bind_events();
         };
-        
-    
+
+
     $.fn.infinitescroll = function (options) {
         return $(this).each(function () {
             new InfiniteBox($(this), options);
         });
     };
-    
+
     $.fn.infinitescroll.defaults = {
         bufferPx: 40,
         itemSelector: '.post',
         nextSelector: '.next',
+        callback: function() {},
     };
-    
+
     InfiniteBox.prototype = {
         bind_events: function () {
             this.bind_click_event();
@@ -47,6 +48,9 @@
                 }
             );
         },
+        callback: function() {
+            return this.settings.callback();
+        },
         fetch_items: function (href) {
             var infinite_box = this;
             var $next_button = this.get_next_button();
@@ -59,6 +63,7 @@
                     $items.hide();
                     $next_button.remove();
                     infinite_box.$container.append($items);
+                    $callback;
                     $items.fadeIn();
                 },
                 dataType: 'html',
