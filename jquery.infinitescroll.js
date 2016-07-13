@@ -63,7 +63,7 @@
                     $items.hide();
                     $next_button.remove();
                     infinite_box.$container.append($items);
-                    $callback;
+                    infinite_box.callback();
                     $items.fadeIn();
                 },
                 dataType: 'html',
