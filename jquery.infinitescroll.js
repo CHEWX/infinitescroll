@@ -1,4 +1,7 @@
-/** Copyright Philipp Zedler. MIT License **/
+/**
+    Copyright Philipp Zedler. MIT License
+    Additional functionality added by Tom Hopcraft (@CHEWX)
+**/
 (function ($) {
 
     var InfiniteBox = function ($element, options) {

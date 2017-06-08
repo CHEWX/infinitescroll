@@ -1,0 +1,17 @@
+{
+  "name": "infinitescroll",
+  "homepage": "https://github.com/CHEWX/infinitescroll",
+  "authors": [
+    "Philipp Zedler",
+    "Tom Hopcraft <tom@madebysix.com>"
+  ],
+  "description": "Infinite Scrolling of Pagination",
+  "main": "jquery.infinitescroll.js",
+  "moduleType": [],
+  "keywords": [
+    "infinite",
+    "scroll",
+    "lazy"
+  ],
+  "license": "MIT"
+}
